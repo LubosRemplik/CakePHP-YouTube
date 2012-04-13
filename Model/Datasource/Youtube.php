@@ -50,7 +50,7 @@ class Youtube extends ApisSource {
 	 */
 	public function beforeRequest(&$model, $request) {
 		$request['uri']['scheme'] = 'https';
-		$request['uri']['query']['key'] = $this->config['login'];
+		$request['uri']['query']['key'] = $this->config['developer_key'];
 		return $request;
 	}
 }

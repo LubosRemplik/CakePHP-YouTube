@@ -7,17 +7,18 @@
  *
  */
 $config['Apis']['Youtube']['hosts'] = array(
-	'oauth' => 'accounts.google.com/o/oauth2/auth',
+	'oauth' => 'accounts.google.com/o/oauth2',
 	'rest' => 'gdata.youtube.com/feeds/api',
 );
 // http://developer.github.com/v3/oauth/
 $config['Apis']['Youtube']['oauth'] = array(
 	'version' => '2.0',
-	'authorize' => 'authorize', // Example URI: https://github.com/login/oauth/authorize
+	'authorize' => 'auth', // Example URI: https://github.com/login/oauth/auth
 	'request' => 'requestToken', //client_id={$this->config['login']}&redirect_uri
 	'access' => 'access_token', 
-	'login' => 'authenticate', // Like authorize, just auto-redirects
+	'login' => 'auth', // Like authorize, just auto-redirects
 	'logout' => 'invalidateToken', 
+	'response_type' => 'code'
 );
 $config['Apis']['Youtube']['read'] = array(
 	// field
